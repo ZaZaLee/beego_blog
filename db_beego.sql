@@ -79,10 +79,10 @@ INSERT INTO `tb_config` VALUES ('1', 'title', 'beego_Blog');
 INSERT INTO `tb_config` VALUES ('2', 'url', 'http://www.hn1024.cn/');
 INSERT INTO `tb_config` VALUES ('5', 'keywords', 'beego');
 INSERT INTO `tb_config` VALUES ('6', 'description', '基于Go语言和beego框架 前端使用layui 布局 开发的个人博客系统');
-INSERT INTO `tb_config` VALUES ('7', 'email', '313690636@qq.com');
+INSERT INTO `tb_config` VALUES ('7', 'email', 'zaza.viking@gmail.com');
 INSERT INTO `tb_config` VALUES ('9', 'timezone', '8');
 INSERT INTO `tb_config` VALUES ('11', 'start', '1');
-INSERT INTO `tb_config` VALUES ('12', 'qq', '313690636');
+INSERT INTO `tb_config` VALUES ('12', 'qq', '17818707');
 
 -- ----------------------------
 -- Table structure for `tb_post`
@@ -185,4 +185,4 @@ CREATE TABLE `tb_user` (
 -- ----------------------------
 -- Records of tb_user
 -- ----------------------------
-INSERT INTO `tb_user` VALUES ('1', 'admin', ' e10adc3949ba59abbe56e057f20f883e', '', '54', null, '[', '0', null, '2017-08-08 19:48:05');
+INSERT INTO `tb_user` VALUES ('1', 'admin', ' 6f1eeead64995ea4e9dee19c1c55c0af', '', '54', null, '[', '0', null, '2017-08-08 19:48:05');

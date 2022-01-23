@@ -1,7 +1,8 @@
 package controllers
 
 import (
-	"github.com/Echosong/beego_blog/models"
+	"beego_blog/models"
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"strings"
@@ -15,6 +16,7 @@ type baseController struct {
 }
 
 func (p *baseController) Prepare() {
+	fmt.Printf("%s", "Prepare in")
 	controllerName, actionName := p.GetControllerAndAction()
 	p.controllerName = strings.ToLower(controllerName[0 : len(controllerName)-10])
 	p.actionName = strings.ToLower(actionName)

@@ -1,9 +1,9 @@
 package controllers
 
 import (
+	"beego_blog/models"
+	"beego_blog/util"
 	"fmt"
-	"github.com/Echosong/beego_blog/models"
-	"github.com/Echosong/beego_blog/util"
 	"strconv"
 	"strings"
 	"time"
@@ -45,6 +45,7 @@ func (c *AdminController) Config() {
 
 //后台用户登录
 func (c *AdminController) Login() {
+	fmt.Printf("%s", "login in")
 	if c.Ctx.Request.Method == "POST" {
 		username := c.GetString("username")
 		password := c.GetString("password")
@@ -119,6 +120,7 @@ func (c *AdminController) Index() {
 
 //主页
 func (c *AdminController) Main() {
+	fmt.Printf("%s", "admincontroller main in")
 	c.TplName = c.controllerName + "/main.tpl"
 }
 
