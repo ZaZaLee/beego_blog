@@ -1,6 +1,6 @@
 package models
 
 type Response struct {
-	Code int
+	Code    int
 	Message interface{}
 }

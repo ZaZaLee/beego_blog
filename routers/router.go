@@ -2,19 +2,19 @@ package routers
 
 import (
 	"beego_blog/controllers"
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/server/web"
 )
 
 func init() {
 
-	beego.Router("/", &controllers.BlogController{}, "*:Home")
-	beego.Router("/home", &controllers.BlogController{}, "*:Home")
-	beego.Router("/article", &controllers.BlogController{}, "*:Article")
-	beego.Router("/detail", &controllers.BlogController{}, "*:Detail")
-	beego.Router("/about", &controllers.BlogController{}, "*:About")
-	beego.Router("/timeline", &controllers.BlogController{}, "*:Timeline")
-	beego.Router("/resource", &controllers.BlogController{}, "*:Resource")
-	beego.Router("/comment", &controllers.BlogController{}, "post:Comment")
+	web.Router("/", &controllers.BlogController{}, "*:Home")
+	web.Router("/home", &controllers.BlogController{}, "*:Home")
+	web.Router("/article", &controllers.BlogController{}, "*:Article")
+	web.Router("/detail", &controllers.BlogController{}, "*:Detail")
+	web.Router("/about", &controllers.BlogController{}, "*:About")
+	web.Router("/timeline", &controllers.BlogController{}, "*:Timeline")
+	web.Router("/resource", &controllers.BlogController{}, "*:Resource")
+	web.Router("/comment", &controllers.BlogController{}, "post:Comment")
 
-	beego.AutoRouter(&controllers.AdminController{})
+	web.AutoRouter(&controllers.AdminController{})
 }

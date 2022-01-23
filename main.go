@@ -3,15 +3,15 @@ package main
 import (
 	"beego_blog/models"
 	_ "beego_blog/routers"
-	"github.com/astaxie/beego"
+	"github.com/beego/beego/v2/server/web"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
 	models.Init()
-	beego.BConfig.WebConfig.Session.SessionOn = true
+	web.BConfig.WebConfig.Session.SessionOn = true
 }
 
 func main() {
-	beego.Run()
+	web.Run()
 }

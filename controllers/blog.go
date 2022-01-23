@@ -40,7 +40,7 @@ func (c *BlogController) list() {
 	if cateId, _ = c.GetInt("cate_id"); cateId != 0 {
 		query = query.Filter("category_id", cateId)
 	}
-	keyword = c.Input().Get("keyword")
+	keyword = c.GetString("keyword")
 	if keyword != "" {
 		query = query.Filter("title__contains", keyword)
 	}

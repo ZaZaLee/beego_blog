@@ -172,15 +172,21 @@ func (c *AdminController) Upload() {
 func (c *AdminController) Save() {
 	post := models.Post{}
 	post.UserId = 1
-	post.Title = c.Input().Get("title")
-	post.Content = c.Input().Get("content")
+	//post.Title = c.Input().Get("title")
+	post.Title = c.GetString("title")
+	//post.Content = c.Input().Get("content")
+	post.Content = c.GetString("content")
 	post.IsTop, _ = c.GetInt8("is_top")
 	post.Types, _ = c.GetInt8("types")
-	post.Tags = c.Input().Get("tags")
-	post.Url = c.Input().Get("url")
+	//post.Tags = c.Input().Get("tags")
+	post.Tags = c.GetString("tags")
+	//post.Url = c.Input().Get("url")
+	post.Url = c.GetString("url")
 	post.CategoryId, _ = c.GetInt("cate_id")
-	post.Info = c.Input().Get("info")
-	post.Image = c.Input().Get("Image")
+	//post.Info = c.Input().Get("info")
+	post.Info = c.GetString("info")
+	//post.Image = c.Input().Get("Image")
+	post.Image = c.GetString("Image")
 	post.Created = time.Now()
 	post.Updated = time.Now()
 
@@ -202,7 +208,7 @@ func (c *AdminController) Save() {
 }
 
 func (c *AdminController) Delete() {
-	id, err := strconv.Atoi(c.Input().Get("id"))
+	id, err := strconv.Atoi(c.GetString("id"))
 	if err != nil {
 		c.History("参数错误", "")
 	} else {
@@ -224,7 +230,7 @@ func (c *AdminController) Category() {
 
 //添加修改类目
 func (c *AdminController) Categoryadd() {
-	id := c.Input().Get("id")
+	id := c.GetString("id")
 	if id != "" {
 		intId, _ := strconv.Atoi(id)
 		cate := models.Category{Id: intId}
@@ -236,8 +242,8 @@ func (c *AdminController) Categoryadd() {
 
 //处理插入数据的字段
 func (c *AdminController) CategorySave() {
-	name := c.Input().Get("name")
-	id := c.Input().Get("id")
+	name := c.GetString("name")
+	id := c.GetString("id")
 	category := models.Category{}
 	category.Name = name
 	category.Updated = time.Now()
@@ -263,7 +269,7 @@ func (c *AdminController) CategorySave() {
 }
 
 func (c *AdminController) CategoryDel() {
-	id, err := strconv.Atoi(c.Input().Get("id"))
+	id, err := strconv.Atoi(c.GetString("id"))
 	if err != nil {
 		c.History("参数错误", "")
 	} else {

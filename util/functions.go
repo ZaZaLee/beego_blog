@@ -2,17 +2,17 @@ package util
 
 import (
 	"crypto/md5"
-	"fmt"
-	"strings"
-	"net/url"
-	"encoding/base64"
 	"crypto/rand"
+	"encoding/base64"
+	"fmt"
 	"io"
+	"net/url"
+	"strings"
 )
 
 func Md5(str string) string {
 	hash := md5.New()
-	hash.Write([]byte(str) )
+	hash.Write([]byte(str))
 	return fmt.Sprintf("%x", hash.Sum(nil))
 }
 

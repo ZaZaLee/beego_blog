@@ -3,13 +3,13 @@ package controllers
 import (
 	"beego_blog/models"
 	"fmt"
-	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
+	"github.com/beego/beego/v2/adapter/orm"
+	"github.com/beego/beego/v2/server/web"
 	"strings"
 )
 
 type baseController struct {
-	beego.Controller
+	web.Controller
 	o              orm.Ormer
 	controllerName string
 	actionName     string
